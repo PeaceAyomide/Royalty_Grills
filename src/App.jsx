@@ -6,12 +6,14 @@ import Services from './component/Services/Services'
 import Testimonial from './component/Testimonial/Testimonial'
 import Contact from './component/Contact/Contact'
 import About from './component/About/About'
+import Whatsapp from '../Whatsapp' 
 
 const App = () => {
   return (
    
     <Router>
 <Navbar />
+<Whatsapp />
 <Routes>
 <Route path="/" element={ <Home/>} />
 <Route path="/about" element={ <About/>} />
