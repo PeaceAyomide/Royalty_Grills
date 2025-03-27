@@ -103,7 +103,7 @@ const Navbar = () => {
         />
       )}
     <div className='fixed top-0 left-0 w-full flex flex-col justify-center items-center text-white bg-black h-screen max-w-[17rem] gap-24 [@media(max-width:1200px)]:hidden'>
-      <h1 className='text-3xl font-bold text-white '>Royalty Grills</h1>
+      <h1 className='text-[1.39rem] font-bold text-white uppercase'>D'Royalty Kitchen</h1>
       <ul className='flex flex-col gap-4'>
       {links.map(link => (
             <li
@@ -131,7 +131,7 @@ const Navbar = () => {
       </div>
     </div>
     <div ref={headerRef} className=' hidden [@media(max-width:1200px)]:flex justify-between items-center   bg-black text-white p-4' style={getHeaderStyle()}>
-<h1 className='text-3xl font-bold text-white font-[PepperHands-Regular]'>Royalty Grills</h1>
+<h1 className='text-[1.2rem] font-bold text-white font-[PepperHands-Regular] uppercase'>D'Royalty Kitchen</h1>
       <div className='harmburger'>
       <FiMenu className='text-3xl cursor-pointer text-[#ad3114]' onClick={toggleSidebar} />
       </div>
