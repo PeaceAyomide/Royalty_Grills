@@ -7,7 +7,7 @@
     
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'PepperHands-Regular';
+    font-family: 'PepperHands-Regular', sans-serif;
     -webkit-tap-highlight-color: transparent;
     
 }

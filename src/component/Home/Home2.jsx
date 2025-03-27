@@ -8,7 +8,7 @@ import { GiCook } from "react-icons/gi";
 const Home2 = () => {
   return (
     <section className='
-    bg-[#0F0F0F] pb-[10rem] 
+    bg-[#0F0F0F] pb-[3.59rem] 
     flex
     justify-center
     h-full
