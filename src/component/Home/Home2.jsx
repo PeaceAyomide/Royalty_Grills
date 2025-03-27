@@ -1,10 +1,14 @@
 import React from 'react'
 import chefcap from '../../assets/chefcap.png'
+import { FaBowlFood } from "react-icons/fa6";
+import { GiMeal } from "react-icons/gi";
+import { GiHotMeal } from "react-icons/gi";
+import { GiCook } from "react-icons/gi";
 
 const Home2 = () => {
   return (
     <section className='
-    bg-[#0F0F0F]
+    bg-[#0F0F0F] pb-[10rem] 
     flex
     justify-center
     h-full
@@ -21,7 +25,7 @@ const Home2 = () => {
         <div class="bg-gray-500  h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
         <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
     </div>
-<div className='pt-3 pb-[10rem]'>
+<div className='pt-3 pb-[7rem]'>
 <p className='text-white pb-9 [@media(max-width:700px)]:text-[1rem]'>
     Come savor the flavors of the finest dish kitchen in the city
     </p>
@@ -30,7 +34,46 @@ const Home2 = () => {
 </button>
 
 </div>
-    
+    <div className='flex justify-center gap-[3rem] [@media(max-width:700px)]:flex-col'>
+        <div className='one gap-3 flex flex-col '>
+            <div className=' flex justify-center'>
+               
+               <GiMeal className='text-[#FF7300] text-[3rem]'/>
+            </div>
+            <h1 className='text-white'>
+            BEST
+            QUALITY
+            </h1>
+            <p className='text-[#4d4d4d]'>We pride ourselves in quality</p>
+        </div>
+        <div className='two gap-3 flex flex-col '>
+            <div className=' flex justify-center'>
+                <FaBowlFood className='text-[#FF7300] text-[3rem]'/>
+            </div>
+            <h1 className='text-white'>
+            Tasty Hut
+            </h1>
+            <p className='text-[#4d4d4d]'>Home to the Best Meals</p>
+        </div>
+        <div className='three gap-3 flex flex-col'>
+            <div className=' flex justify-center'>
+               <GiHotMeal className='text-[#FF7300] text-[3rem]'/>
+            </div>
+            <h1 className='text-white'>
+            Timely Feast
+            </h1>
+            <p className='text-[#4d4d4d]'>Always Hot, Always Ready</p>
+        </div>
+        <div className='four gap-3 flex flex-col'>
+            <div className=' flex justify-center'>
+              <GiCook className='text-[#FF7300] text-[3rem]'/>
+            </div>
+            <h1 className='text-white'>
+            Live Cook
+            </h1>
+            <p className='text-[#4d4d4d]'>A Feast Made Before You</p>
+        </div>
+    </div>
         </div>
 
     </section>
