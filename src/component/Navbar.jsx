@@ -1,10 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebook, FaXTwitter, FaInstagram } from 'react-icons/fa6';
 import { FiMenu, FiX } from "react-icons/fi";
-
+import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
+  const location = useLocation();
+  
   const [activeLink, setActiveLink] = useState("Home");
-  const links = ["Home", "Services", "About", "Testimonials", "Contact"];
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Testimonials", path: "/testimonial" },
+    { name: "Contact", path: "/contact" }
+  ];
+  useEffect(() => {
+    const resetScroll = () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+    };
+
+    requestAnimationFrame(resetScroll);
+  }, [location.pathname]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   
@@ -14,6 +33,11 @@ const Navbar = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  useEffect(() => {
+    // {/* Update active link when location changes */}
+    setActiveLink(location.pathname);
+  }, [location]);
 
   useEffect(() => {
     // {/* Modified scroll event handler to set header fixed state */}
@@ -83,12 +107,21 @@ const Navbar = () => {
       <ul className='flex flex-col gap-4'>
       {links.map(link => (
             <li
-              key={link}
-              className={`cursor-pointer ${activeLink === link ? "text-[#ad3114]" : ""}`}
-              onClick={() => setActiveLink(link)}
+            key={link.name}
+            className={`cursor-pointer ${activeLink === link.path ? "text-[#ad3114]" : ""}`}
+          >
+            
+            <Link 
+              to={link.path} 
+              onClick={() => {
+                setActiveLink(link.path);
+                // Close sidebar on mobile after navigation
+                setIsSidebarOpen(false);
+              }}
             >
-              {link}
-            </li>
+              {link.name}
+            </Link>
+          </li>
           ))}
       </ul>
       <div className='socials flex gap-3 relative top-[6rem]'>
@@ -106,7 +139,7 @@ const Navbar = () => {
     </div>
     {/* Mobile Sliding Sidebar */}
     <div 
-        className={`
+        className={` overflow-y-auto
           fixed top-0 right-0 h-full w-64 bg-black text-white transform transition-transform duration-300 ease-in-out
           ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}
           z-50
@@ -122,15 +155,19 @@ const Navbar = () => {
         <ul className='flex flex-col gap-4 p-4'>
           {links.map(link => (
             <li
-              key={link}
-              className={`cursor-pointer ${activeLink === link ? "text-[#ad3114]" : ""}`}
+            key={link.name}
+            className={`cursor-pointer ${activeLink === link.path ? "text-[#ad3114]" : ""}`}
+          >
+             <Link 
+              to={link.path} 
               onClick={() => {
-                setActiveLink(link);
-                toggleSidebar();
+                setActiveLink(link.path);
+                toggleSidebar(); // Close sidebar after navigation
               }}
             >
-              {link}
-            </li>
+              {link.name}
+            </Link>
+          </li>
           ))}
         </ul>
         <div className='socials flex items-center justify-center gap-3 p-4'>
