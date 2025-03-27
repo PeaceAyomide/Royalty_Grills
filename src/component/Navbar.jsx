@@ -108,7 +108,7 @@ const Navbar = () => {
       {links.map(link => (
             <li
             key={link.name}
-            className={`cursor-pointer ${activeLink === link.path ? "text-[#ad3114]" : ""}`}
+            className={`cursor-pointer text-[1.2rem] ${activeLink === link.path ? "text-[#ad3114]" : ""}`}
           >
             
             <Link 

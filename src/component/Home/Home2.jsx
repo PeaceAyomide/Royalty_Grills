@@ -16,15 +16,21 @@ const Home2 = () => {
             text-white
             font-bold uppercase 
             '>Elite Chef Owners</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-w-5xl w-full pt-[3rem]">
+            <div class=" items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-w-5xl  pt-[3rem]">
         <div class="bg-gray-500  h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
         <div class="bg-gray-500  h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
         <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
     </div>
-
-    <p className='text-white'>
+<div className='pt-3 pb-[10rem]'>
+<p className='text-white pb-9 [@media(max-width:700px)]:text-[1rem]'>
     Come savor the flavors of the finest dish kitchen in the city
     </p>
+    <button className="bg-[#FF7300] hover:bg-[#CC5500] px-6 md:px-8 py-2 md:py-3 rounded-full font-medium text-lg md:text-xl transition-colors ">
+  About Us
+</button>
+
+</div>
+    
         </div>
 
     </section>
