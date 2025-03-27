@@ -7,10 +7,17 @@
     
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'RobotoCondensed', sans-serif;
+    font-family: 'PepperHands-Regular', sans-serif;
     -webkit-tap-highlight-color: transparent;
     
 }
 ::-webkit-scrollbar {
     display: none;
+}
+
+@font-face {
+    font-family: 'PepperHands-Regular';
+    src: url('../fonts/PepperHands-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
