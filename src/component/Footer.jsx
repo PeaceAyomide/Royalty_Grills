@@ -3,7 +3,7 @@ import smoke from '../assets/smoke.png'
 
 const Footer = () => {
   return (
-    <section className='relative bg-[#0F0F0F] flex justify-center items-center h-[100vh] ml-0 [@media(min-width:1200px)]:ml-[17rem] '>
+    <section className='relative bg-[#0F0F0F] flex justify-center min-h-screen items-center  ml-0 [@media(min-width:1200px)]:ml-[17rem] '>
       <img
         src={smoke}
         alt="Smoke effect"
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
       
         </div>
-        <div className='flex justify-center relative top-46 [@media(max-width:700px)]:top-16'>
+        <div className='flex justify-center relative top-46 [@media(max-width:700px)]:top-16  border-t border-[#1a1a1a]'>
             <p className='text-[#808080] text-[1.2rem] mt-10 [@media(max-width:700px)]:text-base [@media(max-width:700px)]:pb-6 '>© 2025 D'Royalty Kitchen. All rights reserved.</p>
         </div>
         </div>
