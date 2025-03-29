@@ -21,3 +21,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Prevent text selection */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
