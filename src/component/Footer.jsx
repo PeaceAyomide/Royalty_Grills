@@ -2,8 +2,15 @@ import React from 'react'
 import smoke from '../assets/smoke.png'
 
 const Footer = () => {
+  const styles = `
+    .phone-hover:hover {
+      color: #ad3114;
+    }
+  `
+
   return (
     <section className='relative bg-[#0F0F0F] flex justify-center min-h-screen items-center  ml-0 [@media(min-width:1200px)]:ml-[17rem] '>
+      <style>{styles}</style>
       <img
         src={smoke}
         alt="Smoke effect"
@@ -20,7 +27,7 @@ const Footer = () => {
         <div className='flex flex-col gap-2'>
             <h1 className='text-white text-2xl [@media(max-width:700px)]:text-xl'>Dine With Us</h1>
             <p className='text-[#808080] text-[1.2rem] [@media(max-width:700px)]:text-base'>Delicious meals, served all week long</p>
-            <p className='text-[#a3a3a3] text-[1.7rem] hover:text-[#ad3114] transition ease-in-out cursor-pointer [@media(max-width:700px)]:text-base'>+234 803 153 7271</p>
+            <p className='phone-hover text-[#a3a3a3] text-[1.7rem] transition ease-in-out cursor-pointer [@media(max-width:700px)]:text-base'>+234 803 153 7271</p>
         </div>
         <div className='flex flex-col gap-2'>
             <h1 className='text-white text-2xl [@media(max-width:700px)]:text-xl'>OPENING HOURS</h1>
