@@ -32,8 +32,8 @@ const WhatsAppIcon = () => {
     };
   }, [lastScrollTop]);
 
-  const phoneNumber = '+1234567890'; // Replace with your restaurant's contact number
-  const message = 'Hi! I would like to place an order or have a question about your menu.'; // Restaurant-specific message
+  const phoneNumber = '+2348031537271'; // Replace with your restaurant's contact number
+  const message = 'Hi! I would like to place an order'; // Restaurant-specific message
 
   const handleWhatsAppClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
