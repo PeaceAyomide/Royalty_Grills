@@ -9,7 +9,7 @@ const Footer = () => {
   `
 
   return (
-    <section className='relative bg-[#0F0F0F] flex justify-center min-h-screen items-center  ml-0 [@media(min-width:1200px)]:ml-[17rem] '>
+    <section className='relative bg-[#0F0F0F] [@media(min-width:1600px)]:min-h-screen py-48 pb-50 [@media(max-width:700px)]:pb-25 [@media(max-width:700px)]:py-10  flex justify-center  items-center  ml-0 [@media(min-width:1200px)]:ml-[17rem] '>
       <style>{styles}</style>
       <img
         src={smoke}
