@@ -2,6 +2,15 @@ import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 
 const Testimonial2 = () => {
+  const styles = `
+    .video-card:hover .video-thumbnail {
+      transform: scale(1.05);
+    }
+    .video-card:hover .video-overlay {
+      opacity: 1;
+    }
+  `
+
   const videoTestimonials = [
     {
       thumbnail: "https://placehold.co/600x400/1a1a1a/FF7300?text=Video+1",
@@ -22,6 +31,7 @@ const Testimonial2 = () => {
 
   return (
     <section className="bg-[#0F0F0F] py-20 pb-4 ml-0 [@media(min-width:1200px)]:ml-[17rem]">
+      <style>{styles}</style>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-5xl [@media(max-width:700px)]:text-[2.5rem] font-bold text-white mb-4">
@@ -35,14 +45,14 @@ const Testimonial2 = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {videoTestimonials.map((video, index) => (
-            <div key={index} className="relative group">
-              <div className="relative overflow-hidden rounded-xl">
+            <div key={index} className="relative">
+              <div className="video-card relative overflow-hidden rounded-xl">
                 <img 
                   src={video.thumbnail} 
                   alt={video.title}
-                  className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="video-thumbnail w-full h-[300px] object-cover transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="video-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
                   <div className="w-16 h-16 bg-[#FF7300] rounded-full flex items-center justify-center">
                     <FaPlay className="text-white text-2xl" />
                   </div>

@@ -2,6 +2,18 @@ import React from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const Testimonial1 = () => {
+  const styles = `
+    .testimonial-card:hover .testimonial-image {
+      transform: scale(1.05);
+    }
+    .testimonial-card:hover .testimonial-overlay {
+      opacity: 1;
+    }
+    .testimonial-card:hover {
+      border-color: #FF7300;
+    }
+  `
+
   const testimonials = [
     {
       image: "/testimonials/whatsapp1.png",
@@ -27,6 +39,7 @@ const Testimonial1 = () => {
 
   return (
     <section className="bg-[#0F0F0F] pt-30 pb-8 md:pb-12 ml-0 [@media(min-width:1200px)]:ml-[17rem]">
+      <style>{styles}</style>
       <div className="container mx-auto px-4">
         <div className="text-center mb-4 md:mb-6">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3">
@@ -41,16 +54,16 @@ const Testimonial1 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="group">
-              <div className="bg-[#1a1a1a] p-2 rounded-lg border border-[#FF7300]/20 hover:border-[#FF7300] transition-all duration-300 relative overflow-hidden">
+              <div className="testimonial-card bg-[#1a1a1a] p-2 rounded-lg border border-[#FF7300]/20 transition-all duration-300 relative overflow-hidden">
                 {/* WhatsApp message screenshot */}
                 <div className="relative h-[150px] sm:h-[180px] md:h-[200px] w-full overflow-hidden rounded-md">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="testimonial-image w-full h-full object-contain transition-transform duration-300"
                   />
                   {/* Hover overlay with WhatsApp icon */}
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="testimonial-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#FF7300] rounded-full flex items-center justify-center">
                       <FaWhatsapp className="text-white text-lg sm:text-xl" />
                     </div>
