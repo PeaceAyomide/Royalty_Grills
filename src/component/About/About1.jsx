@@ -1,4 +1,8 @@
 import React from 'react'
+import chefIsaac from '../../assets/aboutimg/Chef Isaac.jpeg'
+import chefEmmanuel from '../../assets/aboutimg/Chef Emmanuel.jpeg'
+import chefIsaacProfile from '../../assets/aboutimg/Chef Isaac Profile.jpeg'
+import chefEmmanuelProfile from '../../assets/aboutimg/Chef Emmanuel Profile.jpeg'
 
 const About1 = () => {
   const styles = `
@@ -11,16 +15,67 @@ const About1 = () => {
       width: 100%;
       height: 100%;
     }
+    .background-container {
+      position: relative;
+    }
+    .background-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+    .background-emmanuel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-image: url(${chefEmmanuel});
+      background-size: cover;
+      background-position: center 40%;
+      z-index: 0;
+    }
+    .background-isaac {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-image: url(${chefIsaac});
+      background-size: cover;
+      background-position: center 60%;
+      z-index: 0;
+    }
+    @media (min-width: 768px) {
+      .background-emmanuel {
+        width: 50%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-position: center;
+      }
+      .background-isaac {
+        width: 50%;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        background-position: center;
+      }
+    }
   `
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center ml-0 [@media(min-width:1200px)]:ml-[17rem]"
-      style={{ backgroundImage: `url(https://placehold.co/1920x1080/808080/808080)` }}
+      className="relative min-h-screen flex items-center justify-center ml-0 [@media(min-width:1200px)]:ml-[17rem] background-container"
     >
+      {/* Background images with separate positioning */}
+      <div className="background-emmanuel"></div>
+      <div className="background-isaac"></div>
+      
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" aria-hidden="true"></div>
-
+      <div className="background-overlay"></div>
+      
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
@@ -53,23 +108,7 @@ const About1 = () => {
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img 
-                    src="https://placehold.co/200x200/808080/808080?text=CI" 
-                    alt="Chef Isaac" 
-                    className="chef-image object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white">Chef Isaac</h3>
-                  <p className="text-[#FF7300] text-sm md:text-base">Co-CEO</p>
-                  <p className="text-gray-400 mt-2 text-sm md:text-base">
-                    Together with Chef Emmanuel, leading D'Royalty Kitchen with passion and expertise.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
-                  <img 
-                    src="https://placehold.co/200x200/808080/808080?text=CE" 
+                    src={chefEmmanuelProfile} 
                     alt="Chef Emmanuel" 
                     className="chef-image object-cover"
                   />
@@ -79,6 +118,22 @@ const About1 = () => {
                   <p className="text-[#FF7300] text-sm md:text-base">Co-CEO</p>
                   <p className="text-gray-400 mt-2 text-sm md:text-base">
                     Together with Chef Isaac, leading D'Royalty Kitchen with passion and expertise.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <img 
+                    src={chefIsaacProfile} 
+                    alt="Chef Isaac" 
+                    className="chef-image object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-semibold text-white">Chef Isaac</h3>
+                  <p className="text-[#FF7300] text-sm md:text-base">Co-CEO</p>
+                  <p className="text-gray-400 mt-2 text-sm md:text-base">
+                    Together with Chef Emmanuel, leading D'Royalty Kitchen with passion and expertise.
                   </p>
                 </div>
               </div>

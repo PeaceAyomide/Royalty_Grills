@@ -7,8 +7,15 @@ import { FaBowlFood } from "react-icons/fa6";
 import { GiMeal } from "react-icons/gi";
 import { GiHotMeal } from "react-icons/gi";
 import { GiCook } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 const Home2 = () => {
+  const navigate = useNavigate();
+
+  const handleAboutClick = () => {
+    navigate('/about');
+  };
+
   return (
     <section className='
     bg-[#0F0F0F] pb-[3.59rem] 
@@ -38,9 +45,11 @@ const Home2 = () => {
 <p className='text-white pb-9 [@media(max-width:700px)]:text-[1rem]'>
     Come savor the flavors of the finest dish kitchen in the city
     </p>
-    <button className="bg-[#FF7300] hover:bg-[#CC5500] px-6 md:px-8 py-2 md:py-3 rounded-full font-medium text-lg md:text-xl transition-colors ">
-  About Us
-</button>
+    <button 
+      onClick={handleAboutClick}
+      className="bg-[#FF7300] hover:bg-[#CC5500] px-6 md:px-8 py-2 md:py-3 rounded-full font-medium text-lg md:text-xl transition-colors cursor-pointer">
+      About Us
+    </button>
 
 </div>
     <div className='flex justify-center gap-[3rem] [@media(max-width:700px)]:flex-col'>

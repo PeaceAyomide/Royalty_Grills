@@ -24,7 +24,7 @@ const Home1 = () => {
     <h1 className="text-5xl [@media(max-width:700px)]:text-[2.5rem] font-bold mb-4 ">Welcome To D'Royalty Kitchen</h1>
       
      <p className="text-xl [@media(max-width:700px)]:text-[1.1rem] mb-8">Experience premium exquisite meals with exceptional service</p>
-      <button className="menu-button  bg-[#ad3114] hover:bg-[#8a2710] px-8 py-3 rounded-lg font-medium transition-colors">
+      <button className="menu-button bg-[#ad3114] hover:bg-[#8a2710] px-8 py-3 rounded-lg font-medium transition-colors cursor-pointer">
       Explore Menu
       </button>
     </div>
