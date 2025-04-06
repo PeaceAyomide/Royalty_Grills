@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
+import { IoClose } from "react-icons/io5";
+import T1 from '../../assets/testimony_img/T1.jpeg'
+import T2 from '../../assets/testimony_img/T2.jpeg'
+import T3 from '../../assets/testimony_img/T3.jpeg'
+import T4 from '../../assets/testimony_img/T4.jpeg'
+import T5 from '../../assets/testimony_img/T5.jpeg'
+import T6 from '../../assets/testimony_img/T6.jpeg'
 
 const Testimonial1 = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const styles = `
     .testimonial-card:hover .testimonial-image {
       transform: scale(1.05);
@@ -16,24 +25,28 @@ const Testimonial1 = () => {
 
   const testimonials = [
     {
-      image: "/testimonials/whatsapp1.png",
-      date: "March 15, 2024",
+      image: T1,
       name: "Customer Review 1"
     },
     {
-      image: "/testimonials/whatsapp2.png",
-      date: "March 10, 2024",
+      image: T2,
       name: "Customer Review 2"
     },
     {
-      image: "/testimonials/whatsapp3.png",
-      date: "March 5, 2024",
+      image: T3,
       name: "Customer Review 3"
     },
     {
-      image: "/testimonials/whatsapp4.png",
-      date: "March 1, 2024",
+      image: T4,
       name: "Customer Review 4"
+    },
+    {
+      image: T5,
+      name: "Customer Review 5"
+    },
+    {
+      image: T6,
+      name: "Customer Review 6"
     }
   ]
 
@@ -56,7 +69,10 @@ const Testimonial1 = () => {
             <div key={index} className="group">
               <div className="testimonial-card bg-[#1a1a1a] p-2 rounded-lg border border-[#FF7300]/20 transition-all duration-300 relative overflow-hidden">
                 {/* WhatsApp message screenshot */}
-                <div className="relative h-[150px] sm:h-[180px] md:h-[200px] w-full overflow-hidden rounded-md">
+                <div 
+                  className="relative h-[150px] sm:h-[180px] md:h-[200px] w-full overflow-hidden rounded-md cursor-pointer"
+                  onClick={() => setSelectedImage(testimonial.image)}
+                >
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
@@ -70,16 +86,34 @@ const Testimonial1 = () => {
                   </div>
                 </div>
                 
-                {/* Date and name */}
+                {/* Name only */}
                 <div className="mt-2 text-center">
-                  <p className="text-gray-400 text-xs">{testimonial.date}</p>
-                  <p className="text-white text-xs sm:text-sm font-medium mt-0.5">{testimonial.name}</p>
+                  <p className="text-white text-xs sm:text-sm font-medium">{testimonial.name}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-4xl w-full">
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 text-white hover:text-[#FF7300] transition-colors"
+            >
+              <IoClose size={32} />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Full size testimonial" 
+              className="w-full h-auto max-h-[90vh] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

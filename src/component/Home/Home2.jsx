@@ -1,5 +1,8 @@
 import React from 'react'
 import chefcap from '../../assets/chefcap.png'
+import jellof_rice from '../../assets/homeimg/jellof_rice.jpeg'
+import takeaway_rice from '../../assets/homeimg/takeaway_rice.jpeg'
+import donuts from '../../assets/homeimg/donuts.jpeg'
 import { FaBowlFood } from "react-icons/fa6";
 import { GiMeal } from "react-icons/gi";
 import { GiHotMeal } from "react-icons/gi";
@@ -19,11 +22,17 @@ const Home2 = () => {
             text-[3rem] [@media(max-width:700px)]:text-[1.6rem]
             text-white
             font-bold uppercase 
-            '>Elite Chef Owners</h1>
+            '>Elite Chef Feast</h1>
             <div class=" items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-w-5xl  pt-[3rem]">
-        <div class="bg-gray-500  h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
-        <div class="bg-gray-500  h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
-        <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center text-lg font-semibold"></div>
+        <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center">
+            <img src={jellof_rice} alt="Jellof Rice" className="w-full h-full object-cover" />
+        </div>
+        <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center">
+            <img src={takeaway_rice} alt="Takeaway Rice" className="w-full h-full object-cover" />
+        </div>
+        <div class="bg-gray-500 h-[22rem] w-[18rem] flex items-center justify-center">
+            <img src={donuts} alt="Donuts" className="w-full h-full object-cover" />
+        </div>
     </div>
 <div className='pt-3 pb-[7rem]'>
 <p className='text-white pb-9 [@media(max-width:700px)]:text-[1rem]'>
