@@ -1,0 +1,196 @@
+/* Image Viewer Component Styles */
+
+.image-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-out;
+  /* Ensure it blocks all interaction with background */
+  isolation: isolate;
+  /* Prevent scrolling of the background */
+  overflow: hidden;
+  /* Ensure it captures all pointer events */
+  pointer-events: all;
+}
+
+.image-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid rgba(255, 115, 0, 0.2);
+}
+
+.image-viewer-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.image-viewer-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.zoom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zoom-button:hover:not(:disabled) {
+  background-color: #3a3a3a;
+}
+
+.zoom-button:disabled {
+  color: #666;
+  cursor: not-allowed;
+}
+
+.zoom-level {
+  color: white;
+  font-size: 14px;
+  margin: 0 8px;
+  min-width: 48px;
+  text-align: center;
+}
+
+.image-viewer-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image-viewer-close-button:hover {
+  background-color: #FF7300;
+}
+
+.image-viewer-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+}
+
+.viewed-image {
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-viewer-footer {
+  padding: 12px 20px;
+  background-color: #1a1a1a;
+  border-top: 1px solid rgba(255, 115, 0, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.image-viewer-caption {
+  color: #aaa;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Food Menu Specific Styles */
+.food-menu-image {
+  max-height: 80vh !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .image-viewer-header {
+    padding: 10px 16px;
+  }
+
+  .image-viewer-title {
+    font-size: 16px;
+  }
+
+  .zoom-controls {
+    padding: 2px 6px;
+  }
+
+  .zoom-button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .zoom-level {
+    font-size: 12px;
+    min-width: 40px;
+  }
+
+  .image-viewer-close-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .image-viewer-footer {
+    padding: 8px 16px;
+  }
+
+  .image-viewer-caption {
+    font-size: 12px;
+  }
+
+  /* Mobile-specific food menu styles */
+  .food-menu-image {
+    max-height: 70vh !important;
+  }
+}

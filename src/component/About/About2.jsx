@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { FaUtensils, FaClock, FaUsers, FaMapMarkerAlt, FaPhoneAlt, FaFilePdf } from "react-icons/fa"
-import { IoClose } from "react-icons/io5";
-import governmentCertification from '../../assets/aboutimg/government certification.pdf'
+import { FaUtensils, FaClock, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"
+import certificationImage from '../../assets/aboutimg/government_certificationimg.jpg'
+import ImageViewer from '../ImageViewer/ImageViewer'
+import { HiBadgeCheck } from "react-icons/hi";
+
 
 const About2 = () => {
-  const [showPdf, setShowPdf] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   const styles = `
     .feature-card {
@@ -17,11 +19,11 @@ const About2 = () => {
   `
 
   const handleViewCertification = () => {
-    setShowPdf(true);
+    setShowImage(true);
   };
 
-  const handleClosePdf = () => {
-    setShowPdf(false);
+  const handleCloseImage = () => {
+    setShowImage(false);
   };
 
   return (
@@ -86,33 +88,23 @@ const About2 = () => {
 
         {/* Certification Button */}
         <div className="mt-8 md:mt-12 text-center">
-          <button 
+          <button
             onClick={handleViewCertification}
             className="bg-white hover:bg-gray-100 text-black px-4 py-2 rounded-full font-medium text-base transition-colors flex items-center gap-2 mx-auto cursor-pointer"
           >
-            <FaFilePdf className="text-lg" />
-            <span>View Certification</span>
+            <HiBadgeCheck className="text-lg" />
+            <span>View Government Certification</span>
           </button>
         </div>
       </div>
 
-      {/* Full Screen PDF Viewer */}
-      {showPdf && (
-        <div className="fixed inset-0 bg-white z-50">
-          <div className="absolute top-4 right-4 z-10">
-            <button 
-              onClick={handleClosePdf}
-              className="bg-white text-black hover:text-[#FF7300] transition-colors rounded-full p-2 shadow-md border border-gray-200 cursor-pointer"
-            >
-              <IoClose size={28} />
-            </button>
-          </div>
-          <iframe 
-            src={governmentCertification}
-            className="w-full h-full"
-            title="Government Certification"
-          />
-        </div>
+      {/* Image Viewer */}
+      {showImage && (
+        <ImageViewer
+          imageSrc={certificationImage}
+          onClose={handleCloseImage}
+          title="D'Royalty Kitchen Certification"
+        />
       )}
     </section>
   )
